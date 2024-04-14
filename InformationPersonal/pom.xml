@@ -73,6 +73,22 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-testbench-shared</artifactId>
+            <version>9.2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>flow-server</artifactId>
+            <version>24.3.7</version>
+        </dependency>
 
     </dependencies>
     <dependencyManagement>

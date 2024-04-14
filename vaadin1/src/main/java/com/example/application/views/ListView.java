@@ -14,7 +14,9 @@ import com.vaadin.flow.router.Route;
 
 @Route(value="", layout = MainLayout.class)
 @PageTitle("Contacts | Vaadin CRM")
+//The view extends VerticalLayout, which places all child components vertically.
 public class ListView extends VerticalLayout {
+    //The Grid component is typed with Contact.
     Grid<Contact> grid = new Grid<>(Contact.class);
     TextField filterText = new TextField();
     ContactForm form;
@@ -24,9 +26,10 @@ public class ListView extends VerticalLayout {
         this.service = service;
         addClassName("list-view");
         setSizeFull();
+        //The grid configuration is extracted to a separate method to keep the constructor easier to read.
         configureGrid();
         configureForm();
-
+        //Add the toolbar and grid to the VerticalLayout.
         add(getToolbar(), getContent());
         updateList();
         closeEditor();
@@ -63,9 +66,12 @@ public class ListView extends VerticalLayout {
     private void configureGrid() {
         grid.addClassNames("contact-grid");
         grid.setSizeFull();
+        //Define which properties of Contact the grid should show.
         grid.setColumns("firstName", "lastName", "email");
+        //Define custom columns for nested objects.
         grid.addColumn(contact -> contact.getStatus().getName()).setHeader("Status");
         grid.addColumn(contact -> contact.getCompany().getName()).setHeader("Company");
+        //Configure the columns to automatically adjust their size to fit their contents.
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
 
         grid.asSingleSelect().addValueChangeListener(event ->
@@ -75,12 +81,14 @@ public class ListView extends VerticalLayout {
     private Component getToolbar() {
         filterText.setPlaceholder("Filter by name...");
         filterText.setClearButtonVisible(true);
+        //Configure the search field to fire value-change events only when the user stops typing. This way you avoid unnecessary database calls.
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
         filterText.addValueChangeListener(e -> updateList());
 
         Button addContactButton = new Button("Add contact");
         addContactButton.addClickListener(click -> addContact());
 
+        //The toolbar uses a HorizontalLayout to place the TextField and Button next to each other.
         var toolbar = new HorizontalLayout(filterText, addContactButton);
         toolbar.addClassName("toolbar");
         return toolbar;

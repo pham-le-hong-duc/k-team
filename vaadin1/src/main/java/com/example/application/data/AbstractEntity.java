@@ -1,13 +1,13 @@
 package com.example.application.data;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Version;
+import jakarta.persistence.GeneratedValue;//Dùng để chỉ định cách tạo ID cho thực thể.
+import jakarta.persistence.GenerationType;//Enum định nghĩa các chiến lược tạo ID (ví dụ: SEQUENCE, AUTO).
+import jakarta.persistence.Id;//Đánh dấu một trường là khóa chính của thực thể.
+import jakarta.persistence.MappedSuperclass;// Cho biết lớp này là lớp cơ sở cho các thực thể bền nhưng bản thân không được ánh xạ đến bảng cơ sở dữ liệu.
+import jakarta.persistence.SequenceGenerator;//Dùng để cấu hình chuỗi cho việc tạo ID.
+import jakarta.persistence.Version;//Đánh dấu một trường là phiên bản của thực thể để khóa lạc quan.
 
-@MappedSuperclass
+@MappedSuperclass//Anotattion này khai báo AbstractEntity là một lớp trừu tượng đóng vai trò là nền tảng cho các lớp thực thể cụ thể.
 public abstract class AbstractEntity {
 
     @Id

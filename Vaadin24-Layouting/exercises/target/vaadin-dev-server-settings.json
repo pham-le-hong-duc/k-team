@@ -1,0 +1,17 @@
+{
+  "frontendFolder": "C:/Users/ThinkPad/Downloads/Vaadin24-Layouting/exercises/./frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "C:/Users/ThinkPad/Downloads/Vaadin24-Layouting/exercises/./frontend/generated/jar-resources",
+  "staticOutput": "C:/Users/ThinkPad/Downloads/Vaadin24-Layouting/exercises/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "C:\\Users\\ThinkPad\\Downloads\\Vaadin24-Layouting\\exercises\\target\\classes\\META-INF\\VAADIN\\config",
+  "frontendBundleOutput": "C:\\Users\\ThinkPad\\Downloads\\Vaadin24-Layouting\\exercises\\target\\classes\\META-INF\\VAADIN\\webapp",
+  "devBundleOutput": "C:/Users/ThinkPad/Downloads/Vaadin24-Layouting/exercises/src/main/dev-bundle/webapp",
+  "devBundleStatsOutput": "C:/Users/ThinkPad/Downloads/Vaadin24-Layouting/exercises/src/main/dev-bundle/config",
+  "jarResourcesFolder": "C:/Users/ThinkPad/Downloads/Vaadin24-Layouting/exercises/./frontend/generated/jar-resources",
+  "themeName": "training",
+  "clientServiceWorkerSource": "C:\\Users\\ThinkPad\\Downloads\\Vaadin24-Layouting\\exercises\\target\\sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}
